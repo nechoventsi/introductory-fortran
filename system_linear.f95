@@ -7,8 +7,6 @@ integer :: n, i, j, k
 character*20 :: fnamein, fnameout
 
 write (*,*) "System of linear equations solver"
-write (*,*) "by Ventsilav Dimitrov"
-write (*,*)
 
 12 write (*,*) "Enter file name to read:"
 read (*,*) fnamein
@@ -66,4 +64,6 @@ goto 12
 
 end program system_linear
 
-! Version 1.0.0
+! A solver program for systems of linear equations
+! Version 0.0.3
+! By Ventsilav Dimitrov
