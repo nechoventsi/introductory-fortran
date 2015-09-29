@@ -7,12 +7,14 @@ integer :: n, i, j, k
 character*20 :: fnamein, fnameout
 
 write (*,*) "System of linear equations solver"
+write (*,*)
 
 12 write (*,*) "Enter file name to read:"
 read (*,*) fnamein
 write (*,*)
 write (*,*) "How many equations do you want to solve?"
 read (*,*) n
+write (*,*)
 
 allocate(ab(n,n+1),x(n))
 
@@ -39,8 +41,7 @@ do i=n,1,-1
     x(i) = (ab(i,n+1)-s)/ab(i,i)
 end do
 
-write (*,*)
-write (*,*) "Unknowns (in order):"
+write (*,*) "Roots (in order):"
 
 do i=1,n,1
     write (*,*) x(i)
@@ -65,5 +66,5 @@ goto 12
 end program system_linear
 
 ! A solver program for systems of linear equations
-! Version 0.0.3
+! Version 0.0.4
 ! By Ventsilav Dimitrov
