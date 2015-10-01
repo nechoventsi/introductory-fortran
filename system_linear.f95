@@ -4,7 +4,8 @@ implicit none
 real :: m, s
 real,allocatable :: ab(:,:), x(:)
 integer :: n, i, j, k
-character*50 :: fnamein, fnameout, try
+character*50 :: fnamein, fnameout
+character*1 :: try
 
 write (*,*) "System of linear equations solver"
 write (*,*)
