@@ -4,7 +4,7 @@ implicit none
 real :: m, s
 real,allocatable :: ab(:,:), x(:)
 integer :: n, i, j, k
-character*20 :: fnamein, fnameout
+character*50 :: fnamein, fnameout, try
 
 write (*,*) "System of linear equations solver"
 write (*,*)
@@ -41,13 +41,18 @@ do i=n,1,-1
     x(i) = (ab(i,n+1)-s)/ab(i,i)
 end do
 
-write (*,*) "Roots (in order):"
-
-do i=1,n,1
-    write (*,*) x(i)
-end do
-
 close(11)
+
+write (*,*) "Check results out? (y/n)"
+read (*,*) try
+
+if (try=="y") then
+    write (*,*) "Roots (in order):"
+
+    do i=1,n,1
+        write (*,*) x(i)
+    end do
+end if
 
 write (*,*)
 write (*,*) "Enter file name to save results in:"
@@ -61,7 +66,17 @@ end do
 close(12)
 deallocate(ab,x)
 
-goto 12
+write (*,*)
+write (*,*) "Try again? (y/n)"
+read (*,*) try
+
+if (try=="y") then
+    goto 12
+else
+    goto 79
+end if
+
+79
 
 end program system_linear
 
