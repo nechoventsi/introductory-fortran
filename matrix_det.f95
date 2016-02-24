@@ -36,5 +36,4 @@ read (*,*)
 end program matrix_det
 
 ! A simple 3x3 determinant solver program
-! By Naiden, recoding by Ventsislav Dimitrov
-! Version 0.0.2
+! Version 0.0.3
